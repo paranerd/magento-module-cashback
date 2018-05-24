@@ -1,0 +1,10 @@
+<body>
+    <referenceBlock name="customer_account_navigation">
+        <block class="Magento\Framework\View\Element\Html\Link\Current" name="customer-account-navigation-cashback">
+            <arguments>
+				<argument name="path" xsi:type="string">cashback/manage</argument>
+                <argument name="label" xsi:type="string" translate="true">Cash-Back-System</argument>
+            </arguments>
+        </block>
+    </referenceBlock>
+</body>

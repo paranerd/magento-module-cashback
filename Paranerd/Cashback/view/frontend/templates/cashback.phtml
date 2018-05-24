@@ -1,0 +1,33 @@
+<div class="block block-dashboard-cashback">
+    <div class="block-title">
+		<strong><?php /* @escapeNotVerified */ echo __('Ihr aktuelles Cash-Back-Guthaben') ?></strong>
+	</div>
+    <div class="block-content">
+        <div class="box box-information">
+            <strong class="box-title">
+                <span><?php /* @escapeNotVerified */ echo __('Guthaben') ?></span>
+            </strong>
+            <div class="box-content">
+                <p>
+					<?php echo "Gesamt: " . $block->escapeHtml(number_format($block->getCustomer()->getCashbackTotal(), 2, ",", ".") . "€ ") ?><br>
+					<?php echo "Auszahlbar: " . $block->escapeHtml(number_format($block->getCustomer()->getCashback(), 2, ",", ".") . "€ ") ?>
+					<form action="<?php echo $block->getFormAction() ?>" method="post">
+						<input class="input-text" type="text" name="betrag" placeholder="Auszuzahlender Betrag"/>
+						<br><br>
+					    <input type="radio" name="auszahlungsart" value="ikea" checked>Ikea</input><br>
+						<input type="radio" name="auszahlungsart" value="amazon">Amazon</input><br>
+						<input type="radio" name="auszahlungsart" value="ueberweisung">Überweisung</input><br>
+						<input type="radio" name="auszahlungsart" value="gutschein">Übersendung eines Gutscheines in Höhe des Guthabens</input><br><br>
+						<button class="action primary">Auszahlung anfordern</button>
+					</form>
+                </p>
+            </div>
+        </div>
+    </div>
+	<div class="box-content">
+		<br>
+		<p>
+			<i><strong>Die Auszahlung Ihres Cash-Back-Guthaben ist erst nach Zahlungseingang und Ablauf der Widerrufsfrist möglich.</strong></i>
+		</p>
+	</div>
+</div>

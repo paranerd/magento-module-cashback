@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+	<group id="cashback_crongroup">
+		<job name="paranerd_cashback_update" instance="Paranerd\Cashback\Cron\CashbackUpdate" method="execute">
+			<schedule>0 23 * * *</schedule>
+		</job>
+	</group>
+</config>
